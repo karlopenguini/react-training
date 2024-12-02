@@ -1,3 +1,8 @@
-.active {
-  
+.accordion-content {
+  padding: 10px;
+  display: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block; /* Show the content when active */
 }

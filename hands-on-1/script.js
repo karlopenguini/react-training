@@ -2,3 +2,18 @@ var ARROW = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="
 console.log(ARROW);
 
 // Insert function here that will create accordion
+
+document.addEventListener("DOMContentLoaded", function () {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const accordionItem = this.closest('.accordion-item');
+        const accordionContent = accordionItem.querySelector('.accordion-content');
+        
+        // Toggle the 'active' class to show/hide the content
+        accordionItem.classList.toggle('active');
+      });
+    });
+  });
+  

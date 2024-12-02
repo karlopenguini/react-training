@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import FaveJokes from './components/FaveJokes';
+import SearchJokes from './components/SearchJokes';
 
 /**
   Objective: 
@@ -17,6 +19,7 @@ import './App.css';
 */
 
 function App() {
+  const [view, setView] = useState('faveJokes');
   return (
     <main style={{
       padding: "24px"
@@ -26,9 +29,10 @@ function App() {
         display: "flex",
         gap: "8px"
       }}>
-        <button>Give me a joke</button>
-        <button>Search Joke</button>
+        <button onClick={()=>setView('faveJokes')}>Give me a joke</button>
+        <button onClick={()=>setView('searchJokes')}>Search Joke</button>
       </div>
+      {view == 'faveJokes' ? <FaveJokes/> : <SearchJokes /> }
     </main>
   );
 }
